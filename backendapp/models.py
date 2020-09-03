@@ -8,6 +8,7 @@ class Car(models.Model):
     trim = models.CharField(max_length=100)
 
 
+
     def __str__(self):
         return f'{self.year}, {self.make}, {self.model}, {self.trim}'
 

@@ -13,7 +13,7 @@ class CarSerializer(serializers.HyperlinkedModelSerializer):
     )
     class Meta:
         model = Car
-        fields = ['id', 'year', 'make', 'model', 'trim', 'selling_features']
+        fields = ['id', 'year', 'make', 'model', 'trim', 'features', 'car_url']
 
 class FeatureSerializer(serializers.HyperlinkedModelSerializer):
     car = serializers.HyperlinkedRelatedField(
@@ -23,9 +23,9 @@ class FeatureSerializer(serializers.HyperlinkedModelSerializer):
 
     car_id = serializers.PrimaryKeyRelatedField(
         queryset=Car.objects.all(),
-            source='car'
+        source='car'
     
     )
     class Meta:
         model = SellingFeatures
-        fields = ['id', 'car', 'car_id' 'feat1', 'feat2', 'feat3', 'feat4', 'feat5', 'feat6', 'feat7', 'feat8', ]
+        fields = ['id', 'car', 'car_id', 'feat1', 'feat2', 'feat3', 'feat4', 'feat5', 'feat6', 'feat7', 'feat8']
