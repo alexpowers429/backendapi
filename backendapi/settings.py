@@ -29,6 +29,7 @@ DEBUG = True if os.environ['MODE'] == 'dev' else False
 ALLOWED_HOSTS = ['*']
 
 
+LOGIN_REDIRECT_URL = '/'
 # Application definition
 
 INSTALLED_APPS = [
